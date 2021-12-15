@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- standalone list -->
+	<util:list list-class="java.util.LinkedList" id="mybesties">
+		<value>Aman</value>
+		<value>EAman</value>
+		<value>RAman</value>
+	</util:list>
+	
+	<!-- standalone map -->
+	<util:map map-class="java.util.HashMap" id="mycourses">
+		<entry key="Java" value="20000" />
+		<entry key="Spring" value = "232324"/>
+	</util:map>
+	
+	<!-- standalone properties -->
+		
+	<util:properties id="myprops">
+		<prop key="driver">asdqwe </prop>
+		<prop key="username"> asdsa</prop>
+		<prop key="url">dsfsdfs.sads.asda</prop>
+	</util:properties>
+	
+	
+	<bean class="com.hardiksethi.springdemo.standalone.collections.Person"
+		name="person1">
+		<property name="friends" ref="mybesties" />
+		<property name="feeStructure" ref="mycourses"/>
+		<property name="props" ref="myprops"></property>
+	</bean>
+
+
+</beans>
